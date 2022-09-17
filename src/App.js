@@ -1,13 +1,13 @@
-import Personage from "./components/person";
-import  Characters from "./components/character";
+import Personage from "./components/users";
+import  Characters from "./components/Simpson";
 // import './App.css';
 import {findAllByDisplayValue} from "@testing-library/react";
-
+import Char from "./components/Simpsons";
 
 function App() {
   return ( <div>
-      <h2>"Rick and Morti"</h2>
-          <Characters/>
+      <h2>"Simpsons"</h2>
+          <Char/>
 
       </div>
   );
