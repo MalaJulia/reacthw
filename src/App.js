@@ -1,14 +1,13 @@
-import Personage from "./components/users";
-import  Characters from "./components/User";
+// import Personage from "./components/api.ships";
+// import  Characters from "./components/Ship";
 // import './App.css';
-import {findAllByDisplayValue} from "@testing-library/react";
-import Char from "./components/User";
-import User from "./components/User";
-import Users from "./components/users";
-
+// import {findAllByDisplayValue} from "@testing-library/react";
+// import Char from "./components/Ship";
+// import User from "./components/Ship";
+import Ships from "./components/Ship";
 function App() {
   return ( <div>
-          <Users/>
+          <Ships/>
   </div>
   );
 }
