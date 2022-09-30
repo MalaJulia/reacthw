@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// реалізувати 3 маршрути
+// todos - при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
+//
+//     albums - при переході на який тягнуться всі альбоми з https://jsonplaceholder.typicode.com/albums
+//
+//     comments - при переході на який тягнуться всі комментарі https://jsonplaceholder.typicode.com/comments
+//     при натисканні на комментар тягнеться пост, до якого належіить цей коментар всі його пости. приклад запиту https://jsonplaceholder.typicode.com/posts/ID
+//     id поста взяти з коментаря (postId)
+//
+// відображати ті чи інші маршрути можна на будь-якому рівні на ваш вибір.
 
+    import logo from './logo.svg';
+import './App.css';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Link,
+    Outlet
+} from "react-router-dom"
+import Todos from "./components/todo/todos";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+      <Todos/>)
 }
 
 export default App;
