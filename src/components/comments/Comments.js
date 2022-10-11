@@ -1,21 +1,26 @@
-import {Link, Outlet, useNavigate} from "react-router-dom";
-import post from "../../usersPost/Post";
-function Comments (props){
-    const {comment} = props
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
 
-    let navigation = useNavigate()
+
+import {LOAD_COMMENTS} from "../../redux";
+import {CommentsService} from "../../service";
+import {Comment} from "../comment/Comment";
+
+
+const Comments = () => {
+
+    const {comments} = useSelector(state => state.commentsReduser)
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        CommentsService.getAll().then(({data}) => dispatch({type: LOAD_COMMENTS, payload: data}))
+    }, [])
+
     return (
         <div>
-            <Outlet/>
-            <h3>{comment.name} {comment.id} </h3>
-            <button onClick={()=>{
-                console.log('one tap')
-                navigation(comment.id.toString(), {state:{...comment}})
-            }}>{comment.name}</button>
-            {/*<span> <Link to={comment.id.toString()}> details</Link></span>*/}
-
-
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
-    );
+    )
 }
-export default Comments;
+export {Comments}

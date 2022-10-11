@@ -1,0 +1,6 @@
+export *from './actions/action'
+export *from './redusers/comments.reduses'
+export *from './redusers/posts.reduser'
+export *from './redusers/users.reduser'
+export *from './store/combine'
+export *from './store/store'
